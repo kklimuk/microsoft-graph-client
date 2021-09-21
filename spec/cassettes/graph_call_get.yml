@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.microsoft.com/v1.0/me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer token
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 Sep 2021 17:55:22 GMT
+      Content-Type:
+      - application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8
+      Cache-Control:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000
+      Request-Id:
+      - 2a8f79b2-8cb8-4d16-be13-7da98b7e1aa4
+      Client-Request-Id:
+      - 2a8f79b2-8cb8-4d16-be13-7da98b7e1aa4
+      X-Ms-Ags-Diagnostic:
+      - '{"ServerInfo":{"DataCenter":"West US","Slice":"E","Ring":"4","ScaleUnit":"001","RoleInstance":"BY1PEPF00002543"}}'
+      Odata-Version:
+      - '4.0'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#users/$entity","displayName":"Kirill
+        Klimuk","surname":"Klimuk","givenName":"Kirill","id":"89d5fafe0adc70ee","userPrincipalName":"kklimuk@gmail.com","businessPhones":[],"jobTitle":null,"mail":null,"mobilePhone":null,"officeLocation":null,"preferredLanguage":null}'
+  recorded_at: Tue, 21 Sep 2021 17:55:23 GMT
+recorded_with: VCR 6.0.0

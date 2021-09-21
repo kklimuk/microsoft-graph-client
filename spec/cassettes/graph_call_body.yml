@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://graph.microsoft.com/v1.0/me/drive/items/89D5FAFE0ADC70EE!106/workbook/worksheets/Sheet1/range(address='A56:B57')
+    body:
+      encoding: UTF-8
+      string: '{"values":[["Hello","100"],["1/1/2016",null]],"formulas":[[null,null],[null,"=B56*2"]],"numberFormat":[[null,null],["m-ddd",null]]}'
+    headers:
+      Authorization:
+      - Bearer token
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 Sep 2021 18:13:44 GMT
+      Content-Type:
+      - application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8
+      Cache-Control:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000
+      Request-Id:
+      - 463dceb7-90de-40c2-ae68-cad74fb2890c
+      Client-Request-Id:
+      - 463dceb7-90de-40c2-ae68-cad74fb2890c
+      X-Ms-Ags-Diagnostic:
+      - '{"ServerInfo":{"DataCenter":"West US","Slice":"E","Ring":"4","ScaleUnit":"002","RoleInstance":"BY1PEPF00003AC1"}}'
+      Odata-Version:
+      - '4.0'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#workbookRange","@odata.type":"#microsoft.graph.workbookRange","@odata.id":"/users(''kklimuk%40gmail.com'')/drive/items(''89D5FAFE0ADC70EE%21106'')/workbook/worksheets(%27%7B84FABE00-2D27-A843-B953-03E854DFA415%7D%27)/range(address=%27A56:B57%27)","address":"Sheet1!A56:B57","addressLocal":"Sheet1!A56:B57","columnCount":2,"cellCount":4,"columnHidden":false,"rowHidden":false,"numberFormat":[["General","General"],["m-ddd","General"]],"columnIndex":0,"text":[["Hello","100"],["1-Fri","200"]],"formulas":[["Hello",100],[42370,"=B56*2"]],"formulasLocal":[["Hello",100],[42370,"=B56*2"]],"formulasR1C1":[["Hello",100],[42370,"=R[-1]C*2"]],"hidden":false,"rowCount":2,"rowIndex":55,"valueTypes":[["String","Double"],["Double","Double"]],"values":[["Hello",100],[42370,200]]}'
+  recorded_at: Tue, 21 Sep 2021 18:13:44 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://graph.microsoft.com/v1.0/$batch
+    body:
+      encoding: UTF-8
+      string: '{"requests":[{"id":"5e5108ca-b020-46e9-b557-9e13ec5b0781","url":"/me","method":"GET"},{"id":"75ac1a26-2210-4990-9ceb-fbc6f2b41e9e","url":"/me/drive/items/89D5FAFE0ADC70EE!106/workbook/worksheets/Sheet1/range(address=''A56:B57'')","method":"PATCH","headers":{"Accept":"application/json","Content-Type":"application/json"},"body":{"values":[["Hello","100"],["1/1/2016",null]],"formulas":[[null,null],[null,"=B56*2"]],"numberFormat":[[null,null],["m-ddd",null]]}}]}'
+    headers:
+      Authorization:
+      - Bearer token
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 Sep 2021 20:20:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000
+      Request-Id:
+      - 4376b6e0-9f4c-4e8a-ae10-4f71799efff0
+      Client-Request-Id:
+      - 4376b6e0-9f4c-4e8a-ae10-4f71799efff0
+      X-Ms-Ags-Diagnostic:
+      - '{"ServerInfo":{"DataCenter":"West US","Slice":"E","Ring":"4","ScaleUnit":"003","RoleInstance":"BY1PEPF000039C9"}}'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"responses": [{"id": "5e5108ca-b020-46e9-b557-9e13ec5b0781","status":200,"headers"
+        : {"Cache-Control":"no-cache","OData-Version":"4.0","Content-Type":"application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8"},"body":{"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#users/$entity","displayName":"Kirill
+        Klimuk","surname":"Klimuk","givenName":"Kirill","id":"89d5fafe0adc70ee","userPrincipalName":"kirill@nebohq.com","businessPhones":[],"jobTitle":null,"mail":null,"mobilePhone":null,"officeLocation":null,"preferredLanguage":null}},{"id":
+        "75ac1a26-2210-4990-9ceb-fbc6f2b41e9e","status":200,"headers" : {"Cache-Control":"no-cache","OData-Version":"4.0","Content-Type":"application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8"},"body":{"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#workbookRange","@odata.type":"#microsoft.graph.workbookRange","@odata.id":"/users(''kirill%40nebohq.com'')/drive/items(''89D5FAFE0ADC70EE%21106'')/workbook/worksheets(%27%7B84FABE00-2D27-A843-B953-03E854DFA415%7D%27)/range(address=%27A56:B57%27)","address":"Sheet1!A56:B57","addressLocal":"Sheet1!A56:B57","columnCount":2,"cellCount":4,"columnHidden":false,"rowHidden":false,"numberFormat":[["General","General"],["m-ddd","General"]],"columnIndex":0,"text":[["Hello","100"],["1-Fri","200"]],"formulas":[["Hello",100],[42370,"=B56*2"]],"formulasLocal":[["Hello",100],[42370,"=B56*2"]],"formulasR1C1":[["Hello",100],[42370,"=R[-1]C*2"]],"hidden":false,"rowCount":2,"rowIndex":55,"valueTypes":[["String","Double"],["Double","Double"]],"values":[["Hello",100],[42370,200]]}}]}'
+  recorded_at: Tue, 21 Sep 2021 20:20:04 GMT
+recorded_with: VCR 6.0.0
