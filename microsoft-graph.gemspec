@@ -3,7 +3,7 @@
 require_relative "lib/microsoft/graph/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "microsoft-graph"
+  spec.name = "microsoft-graph-client"
   spec.version = Microsoft::Graph::VERSION
   spec.authors = ["Kirill Klimuk"]
   spec.email = ["kklimuk@gmail.com"]

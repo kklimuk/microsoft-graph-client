@@ -7,7 +7,7 @@ This is a [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) cli
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "microsoft-graph"
+gem "microsoft-graph-client"
 ```
 
 And then execute:
