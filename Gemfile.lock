@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    microsoft-graph-client (0.1.0)
+    microsoft-graph-client (0.1.1)
+      httparty
 
 GEM
   remote: https://rubygems.org/
@@ -66,7 +67,6 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  httparty
   microsoft-graph-client!
   rake (~> 13.0)
   rspec (~> 3.0)

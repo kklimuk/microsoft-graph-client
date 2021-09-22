@@ -9,8 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["kklimuk@gmail.com"]
 
   spec.summary = "Access the Microsoft Graph API."
-  # spec.description   = "TODO: Write a longer description or delete this line."
-  # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage = "https://github.com/kklimuk/microsoft-graph"
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
@@ -23,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "httparty"
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
 

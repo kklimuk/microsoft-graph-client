@@ -7,7 +7,6 @@ gemspec
 
 gem "rake", "~> 13.0"
 gem "rspec", "~> 3.0"
-gem "httparty"
 gem "rubocop", "~> 1.7"
 
 group :test do
