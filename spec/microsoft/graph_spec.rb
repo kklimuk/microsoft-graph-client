@@ -58,7 +58,7 @@ RSpec.describe Microsoft::Graph do
         is_expected.to have_attributes(
           "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#workbookRange",
           "@odata.type": "#microsoft.graph.workbookRange",
-          "@odata.id": "/users('kklimuk%40gmail.com')/drive/items('89D5FAFE0ADC70EE%21106')/workbook/worksheets(%27%7B84FABE00-2D27-A843-B953-03E854DFA415%7D%27)/range(address=%27A56:B57%27)",
+          "@odata.id": "/users('kklimuk%40gmail.com')/drive/items('89D5FAFE0ADC70EE%21106')/workbook/worksheets(%27%7B84FABE00-2D27-A843-B953-03E854DFA415%7D%27)/range(address=%27A56:B57%27)", # rubocop:disable Layout/LineLength
           address: "Sheet1!A56:B57",
           address_local: "Sheet1!A56:B57",
           column_count: 2,

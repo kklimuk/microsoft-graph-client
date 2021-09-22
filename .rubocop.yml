@@ -29,6 +29,10 @@ Metrics/MethodLength:
   Max: 30
   CountAsOne: ['array', 'hash', 'heredoc']
 
+Naming/FileName:
+  Exclude:
+    - lib/microsoft-graph-client
+
 Layout/FirstArgumentIndentation:
   EnforcedStyle: consistent
 
