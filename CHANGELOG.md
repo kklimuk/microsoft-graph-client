@@ -6,3 +6,6 @@
 
 ## [0.1.1] - 2021-09-22
 - Added homepage to the gemspec
+
+## [0.1.2] - 2021-09-22
+- Make the gem easier to require

@@ -18,6 +18,12 @@ Or install it yourself as:
 
     $ gem install microsoft-graph
 
+Once you have installed it, require it via:
+
+```ruby
+require 'microsoft-graph-client'
+```
+
 ## Usage
 
 The gem supports both individual calls to the API. To issue either of these calls, it's important to initialize the Graph 
@@ -29,6 +35,8 @@ You will have to [register the app](https://docs.microsoft.com/en-us/azure/activ
 Here's some sample code to get you started:
 
 ```ruby
+require 'microsoft-graph-client'
+
 username      = 'admin@tenant.onmicrosoft.com'
 password      = 'xxxxxxxxxxxx'
 client_id     = 'xxxxx-xxxx-xxx-xxxxxx-xxxxxxx'

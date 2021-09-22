@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    microsoft-graph-client (0.1.1)
+    microsoft-graph-client (0.1.2)
       httparty
 
 GEM
