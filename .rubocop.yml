@@ -31,7 +31,7 @@ Metrics/MethodLength:
 
 Naming/FileName:
   Exclude:
-    - lib/microsoft-graph-client
+    - lib/microsoft-graph-client.rb
 
 Layout/FirstArgumentIndentation:
   EnforcedStyle: consistent

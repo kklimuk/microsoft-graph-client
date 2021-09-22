@@ -1,4 +1,5 @@
-# Microsoft::Graph
+# Microsoft::Graph 
+[![Build Status](https://app.travis-ci.com/kklimuk/microsoft-graph-client.svg?branch=main)](https://app.travis-ci.com/kklimuk/microsoft-graph-client)
 
 This is a [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) client gem, since the official client library is [not supported](https://github.com/microsoftgraph/msgraph-sdk-ruby).
 

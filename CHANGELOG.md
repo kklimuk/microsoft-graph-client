@@ -9,3 +9,7 @@
 
 ## [0.1.2] - 2021-09-22
 - Make the gem easier to require
+
+## [0.1.3] - 2021-09-22
+- Add CI pipeline and precommit hooks
+- Rename gemspec
