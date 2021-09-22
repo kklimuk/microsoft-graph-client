@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in microsoft-graph.gemspec
+# Specify your gem's dependencies in microsoft-graph-client.gemspec
 gemspec
 
 gem "rake", "~> 13.0"
