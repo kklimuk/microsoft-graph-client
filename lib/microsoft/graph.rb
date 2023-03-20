@@ -12,6 +12,8 @@ module Microsoft
     BODY_METHODS = %w[POST PUT PATCH].freeze
     ALLOWED_METHODS = [*BODY_METHODS, "GET", "DELETE"].freeze
 
+    attr_reader :last_response
+
     def initialize(token: nil, error_handler: method(:error_handler), version: "v1.0")
       @token = token
       @parser = URI::Parser.new
@@ -54,6 +56,7 @@ module Microsoft
         body: @body_formatter.call(body, method: method).to_json,
         parser: InstanceParser
       )
+      @last_response = response
 
       case response.code
       when 200...400
