@@ -90,9 +90,9 @@ module Microsoft
     end
 
     class InstanceParser < HTTParty::Parser
-      def parse
-        return nil unless body
+      protected
 
+      def json
         JSON.parse(body, object_class: JSONStruct)
       end
     end
