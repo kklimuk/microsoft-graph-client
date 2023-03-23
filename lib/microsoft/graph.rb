@@ -90,6 +90,12 @@ module Microsoft
     end
 
     class InstanceParser < HTTParty::Parser
+      def parse
+        utf8_bom_in_body_encoding = UTF8_BOM.dup.force_encoding(@body.encoding)
+        @body.gsub!(/\A#{utf8_bom_in_body_encoding}/, "").force_encoding("UTF-8") if @body.start_with?(utf8_bom_in_body_encoding)
+        super
+      end
+
       protected
 
       def json
