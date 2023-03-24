@@ -35,7 +35,7 @@ module Microsoft
       define_method(method.downcase) { |*args, **kwargs| call(*args, method: method, **kwargs) }
     end
 
-    def call(endpoint, token: @token, method: "GET", headers: {}, params: nil, body: nil)
+    def call(endpoint, token: @token, method: "GET", headers: {}, params: nil, body: nil, debug_output: nil)
       method = method.upcase
       raise ArgumentError, "`#{method}` is not a valid HTTP method." unless ALLOWED_METHODS.include?(method)
 
@@ -52,7 +52,8 @@ module Microsoft
         headers: headers,
         query: params,
         body: @body_formatter.call(body, method: method).to_json,
-        parser: InstanceParser
+        parser: InstanceParser,
+        debug_output: debug_output
       )
 
       case response.code
