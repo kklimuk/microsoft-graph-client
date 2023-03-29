@@ -12,7 +12,7 @@ module Microsoft
     BODY_METHODS = %w[POST PUT PATCH].freeze
     ALLOWED_METHODS = [*BODY_METHODS, "GET", "DELETE"].freeze
 
-    def initialize(token: nil, error_handler: method(:error_handler), version: "1.0")
+    def initialize(token: nil, error_handler: method(:error_handler), version: "v1.0")
       @token = token
       @parser = URI::Parser.new
       @body_formatter = Microsoft::Graph::BodyFormatter.new
@@ -35,11 +35,11 @@ module Microsoft
       define_method(method.downcase) { |*args, **kwargs| call(*args, method: method, **kwargs) }
     end
 
-    def call(endpoint, token: @token, method: "GET", headers: {}, params: nil, body: nil)
+    def call(endpoint, token: @token, method: "GET", headers: {}, params: nil, body: nil, debug_output: nil)
       method = method.upcase
       raise ArgumentError, "`#{method}` is not a valid HTTP method." unless ALLOWED_METHODS.include?(method)
 
-      url = URI.join(GRAPH_HOST, @parser.escape("v#{@version}/#{endpoint.gsub(%r{^/}, "")}"))
+      url = URI.join(GRAPH_HOST, @parser.escape("#{@version}/#{endpoint.gsub(%r{^/}, "")}"))
       headers = headers.merge(
         Authorization: "Bearer #{token}",
         Accept: "application/json"
@@ -52,7 +52,8 @@ module Microsoft
         headers: headers,
         query: params,
         body: @body_formatter.call(body, method: method).to_json,
-        parser: InstanceParser
+        parser: InstanceParser,
+        debug_output: debug_output
       )
 
       case response.code
@@ -91,8 +92,14 @@ module Microsoft
 
     class InstanceParser < HTTParty::Parser
       def parse
-        return nil unless body
+        utf8_bom_in_body_encoding = UTF8_BOM.dup.force_encoding(@body.encoding)
+        @body.gsub!(/\A#{utf8_bom_in_body_encoding}/, "").force_encoding("UTF-8") if @body.start_with?(utf8_bom_in_body_encoding)
+        super
+      end
 
+      protected
+
+      def json
         JSON.parse(body, object_class: JSONStruct)
       end
     end
